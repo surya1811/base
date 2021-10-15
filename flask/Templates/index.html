@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sales prediction</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}"  rel="stylesheet">
+  </head>
+  <body>
+    <img src="{{url_for('static', filename='images/predictive.svg')}}" class="image1" alt="" />
+    <img src="{{url_for('static', filename='images/lady.svg')}}" class="image2" alt="" />
+    <div class="box">
+      <h1>SALES</h1>
+      <form action="http://localhost:5000/predict" method="post">
+      <div class="textbox">
+        <i class="fas fa-tv"></i>
+        <input name="tv" type="text" placeholder="TV" required>
+      </div>
+      <div class="textbox">
+        <i class="fas fa-broadcast-tower"></i>
+        <input name="r" type="text" placeholder="Radio" required>
+      </div>
+      <div class="textbox">
+        <i class="far fa-newspaper"></i>
+        <input name="np" type="text" placeholder="Newspaper" required>
+      </div>
+      <input type="submit" class="btn" value="Predict" >
+      </form>
+      <div class="op">
+      <p>{{showcase}}</p>
+      </div>
+    </div>
+    
+  </body>
+</html>
